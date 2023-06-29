@@ -10,29 +10,35 @@ import SwiftUI
 struct ContentView: View {
     
     
-    let characters : [Character] = CharacterService().getCharacters()
+    @ObservedObject var characterService = CharacterService()
     
     var body: some View {
-        
-        ZStack {
+        NavigationView {
+            ZStack {
             
-            
-            Image("Image")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .position(x: UIScreen.main.bounds.width / 2, y: 0)
-            
-            
+                Image("Image")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .position(x: UIScreen.main.bounds.width / 2, y: 0)
                 
-            List(characters) { character in
-                HStack{
-                    CharacterItem(character: character)
+                
+                    
+                List(characterService.characters) { character in
+                    NavigationLink(destination: CharacterView(character: character)) {
+                        CharacterItem(character: character)
+                    }
+                    
+                }.scrollContentBackground(.hidden).padding(.top, 200)
+            }.ignoresSafeArea()
+                .onAppear(){
+                    characterService.getCharacters()
                 }
-                
-            }.scrollContentBackground(.hidden).padding(.top, 200)
-        }.ignoresSafeArea()
+        }
+        
+
         
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -9,43 +9,26 @@ import Foundation
 
 
 
-struct CharacterService {
+class CharacterService: ObservableObject {
+    
+    @Published var characters : [Character] = []
     
     
-    func getCharacters() -> [Character] {
+    func getCharacters() {
         
-        let character1 = Character(
-            id: 21,
-            name: "Aqua Morty",
-            status: "unknown",
-            species: "Humanoid",
-            type: "Fish-Person",
-            gender: "Male",
-            origin: Origin(name: "unknown", url: ""),
-            location: Location(name: "Citadel of Ricks", url: "https://rickandmortyapi.com/api/location/3"),
-            image: "https://rickandmortyapi.com/api/character/avatar/21.jpeg",
-            episode: ["https://rickandmortyapi.com/api/episode/10", "https://rickandmortyapi.com/api/episode/22"],
-            url: "https://rickandmortyapi.com/api/character/21",
-            created: "2017-11-04T22:39:48.055Z"
-        )
-        
-        let character2 = Character(
-            id: 22,
-            name: "Aqua Morty",
-            status: "unknown",
-            species: "Humanoid",
-            type: "Fish-Person",
-            gender: "Male",
-            origin: Origin(name: "unknown", url: ""),
-            location: Location(name: "Citadel of Ricks", url: "https://rickandmortyapi.com/api/location/3"),
-            image: "https://rickandmortyapi.com/api/character/avatar/21.jpeg",
-            episode: ["https://rickandmortyapi.com/api/episode/10", "https://rickandmortyapi.com/api/episode/22"],
-            url: "https://rickandmortyapi.com/api/character/21",
-            created: "2017-11-04T22:39:48.055Z"
-        )
-        
-        
-        return [character1, character2]
-        
+        let apiService = APIService()
+        apiService.fetchResource(resource: "character") { (characters: [Character]?) in
+            guard let characters = characters else {
+                print("Error fetching characters")
+                return
+            }
+            
+            
+            DispatchQueue.main.async {
+                self.characters = characters
+            }
+            
+            
+        }
     }
 }
