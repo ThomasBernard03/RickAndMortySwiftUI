@@ -29,8 +29,9 @@ struct CustomTabItemStyle: TabItemStyle {
     public func tabItem(icon: String, title: String, isSelected: Bool) -> some View {
         ZStack {
             if isSelected {
-                Circle()
-                    .foregroundColor(.blue)
+                Rectangle()
+                    .cornerRadius(12)
+                    .foregroundColor(Color("AccentColor"))
                     .frame(width: 40.0, height: 40.0)
             }
             
