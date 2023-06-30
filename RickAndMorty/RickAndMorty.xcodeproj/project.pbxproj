@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8103610F2A4E0C3F00A38EC3 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103610E2A4E0C3F00A38EC3 /* CharacterView.swift */; };
 		810361112A4E164300A38EC3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810361102A4E164300A38EC3 /* ApiService.swift */; };
+		815897852A4ED03C00F15BDC /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 815897842A4ED03C00F15BDC /* TabBar */; };
+		815897872A4ED07000F15BDC /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815897862A4ED07000F15BDC /* TabItem.swift */; };
+		8158978B2A4ED24B00F15BDC /* CustomTabBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8158978A2A4ED24B00F15BDC /* CustomTabBarStyle.swift */; };
+		8158978E2A4ED26800F15BDC /* CustomTabItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8158978D2A4ED26800F15BDC /* CustomTabItemStyle.swift */; };
 		817746C02A4DA60C0014CA56 /* RickAndMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817746BF2A4DA60C0014CA56 /* RickAndMortyApp.swift */; };
 		817746C22A4DA60C0014CA56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817746C12A4DA60C0014CA56 /* ContentView.swift */; };
 		817746C42A4DA60E0014CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 817746C32A4DA60E0014CA56 /* Assets.xcassets */; };
@@ -21,6 +25,9 @@
 /* Begin PBXFileReference section */
 		8103610E2A4E0C3F00A38EC3 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		810361102A4E164300A38EC3 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		815897862A4ED07000F15BDC /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		8158978A2A4ED24B00F15BDC /* CustomTabBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarStyle.swift; sourceTree = "<group>"; };
+		8158978D2A4ED26800F15BDC /* CustomTabItemStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItemStyle.swift; sourceTree = "<group>"; };
 		817746BC2A4DA60C0014CA56 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		817746BF2A4DA60C0014CA56 /* RickAndMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyApp.swift; sourceTree = "<group>"; };
 		817746C12A4DA60C0014CA56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,12 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815897852A4ED03C00F15BDC /* TabBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		815897882A4ED23000F15BDC /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				8158978C2A4ED25800F15BDC /* TabItem */,
+				815897892A4ED23800F15BDC /* TabBar */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		815897892A4ED23800F15BDC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8158978A2A4ED24B00F15BDC /* CustomTabBarStyle.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8158978C2A4ED25800F15BDC /* TabItem */ = {
+			isa = PBXGroup;
+			children = (
+				8158978D2A4ED26800F15BDC /* CustomTabItemStyle.swift */,
+			);
+			path = TabItem;
+			sourceTree = "<group>";
+		};
 		817746B32A4DA60C0014CA56 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +94,7 @@
 		817746BE2A4DA60C0014CA56 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				815897882A4ED23000F15BDC /* Styles */,
 				817746D32A4DBB250014CA56 /* Services */,
 				817746D02A4DB3A70014CA56 /* Views */,
 				817746CF2A4DB2A70014CA56 /* Models */,
@@ -83,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				817746CD2A4DB2210014CA56 /* Character.swift */,
+				815897862A4ED07000F15BDC /* TabItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +157,9 @@
 			dependencies = (
 			);
 			name = RickAndMorty;
+			packageProductDependencies = (
+				815897842A4ED03C00F15BDC /* TabBar */,
+			);
 			productName = RickAndMorty;
 			productReference = 817746BC2A4DA60C0014CA56 /* RickAndMorty.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +188,9 @@
 				Base,
 			);
 			mainGroup = 817746B32A4DA60C0014CA56;
+			packageReferences = (
+				815897832A4ED03C00F15BDC /* XCRemoteSwiftPackageReference "TabBar" */,
+			);
 			productRefGroup = 817746BD2A4DA60C0014CA56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,9 +220,12 @@
 				8103610F2A4E0C3F00A38EC3 /* CharacterView.swift in Sources */,
 				817746D52A4DBB340014CA56 /* CharacterService.swift in Sources */,
 				817746CE2A4DB2210014CA56 /* Character.swift in Sources */,
+				8158978E2A4ED26800F15BDC /* CustomTabItemStyle.swift in Sources */,
 				817746C22A4DA60C0014CA56 /* ContentView.swift in Sources */,
+				8158978B2A4ED24B00F15BDC /* CustomTabBarStyle.swift in Sources */,
 				817746D22A4DB3D10014CA56 /* CharacterItem.swift in Sources */,
 				810361112A4E164300A38EC3 /* ApiService.swift in Sources */,
+				815897872A4ED07000F15BDC /* TabItem.swift in Sources */,
 				817746C02A4DA60C0014CA56 /* RickAndMortyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +429,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		815897832A4ED03C00F15BDC /* XCRemoteSwiftPackageReference "TabBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onl1ner/TabBar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		815897842A4ED03C00F15BDC /* TabBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 815897832A4ED03C00F15BDC /* XCRemoteSwiftPackageReference "TabBar" */;
+			productName = TabBar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 817746B42A4DA60C0014CA56 /* Project object */;
 }
