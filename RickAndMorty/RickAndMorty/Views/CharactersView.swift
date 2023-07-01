@@ -12,24 +12,24 @@ struct CharactersView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Image("Portal")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .position(x: UIScreen.main.bounds.width / 2, y: 0)
+            VStack {
+                //Image("Portal")
+                //    .resizable()
+                //    .aspectRatio(contentMode: .fit)
+                //    .position(x: UIScreen.main.bounds.width / 2, y: 0)
                 
+            
                 
-                    
                 List(characterService.characters) { character in
                     NavigationLink(destination: CharacterView(character: character)) {
                         CharacterItem(character: character)
                     }
                     
-                }.scrollContentBackground(.hidden).padding(.top, 200)
-            }.ignoresSafeArea()
-                .onAppear(){
-                    characterService.getCharacters()
-                }
+                }.scrollContentBackground(.hidden)
+            }.background(Color("BackgroundColor"))
+            .onAppear(){
+                characterService.getCharacters()
+            }
         }
     }
 }

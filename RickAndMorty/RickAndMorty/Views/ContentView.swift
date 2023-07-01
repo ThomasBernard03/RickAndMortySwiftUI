@@ -23,6 +23,9 @@ struct ContentView: View {
             
             Text("Second")
                 .tabItem(for: Item.second)
+            
+            Text("Third")
+                .tabItem(for: Item.third)
         }
         .tabBar(style: CustomTabBarStyle())
         .tabItem(style: CustomTabItemStyle())

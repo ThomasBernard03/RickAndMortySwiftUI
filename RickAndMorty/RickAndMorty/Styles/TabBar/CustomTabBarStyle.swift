@@ -31,7 +31,7 @@ struct CustomTabBarStyle: TabBarStyle {
             .background(Color("color.tab.bar.background"))
             .cornerRadius(25.0)
             .frame(height: 50.0)
-            .padding(.horizontal, 64.0)
+            .padding(.horizontal, 44.0)
             .padding(.bottom, 16.0 + geometry.safeAreaInsets.bottom)
     }
     
